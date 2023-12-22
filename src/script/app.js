@@ -1,18 +1,18 @@
 const circleNode = document.querySelector(".circle");
 const textNode = document.querySelector(".text");
 const btnNode = document.querySelector(".btn");
-let arr = [];
+let arrTime = [];
 let averageSum = [];
 function clickHandler() {
-  const max = 90;
+  const max = 100;
   circleNode.style.top = `${Math.floor(Math.random() * (max + 1))}%`;
   circleNode.style.left = `${Math.floor(Math.random() * max + 1)}%`;
-  const date = new Date();
-  let keyId = date.getTime();
-  arr.push(keyId);
+  const dateTime = new Date();
+  let time = dateTime.getTime();
+  arrTime.push(time);
 
-  let lastKey = arr[arr.length - 1];
-  let penultimate = arr[arr.length - 2];
+  let lastKey = arrTime[arrTime.length - 1];
+  let penultimate = arrTime[arrTime.length - 2];
   let summ = 0;
   if (!isNaN(lastKey) && !isNaN(penultimate)) {
     summ = lastKey - penultimate;
@@ -21,8 +21,8 @@ function clickHandler() {
   changeClass();
   renderText(summ);
 }
-function average(arr) {
-  return arr.reduce((e, a) => e + a, 0) / arr.length;
+function average(arrTime) {
+  return arrTime.reduce((e, a) => e + a, 0) / arrTime.length;
 }
 
 function renderText(summ) {
@@ -36,12 +36,12 @@ function renderText(summ) {
   } else {
     subtitleNode.style.color = "red";
   }
-  // return subtitle;
 }
 function changeClass() {
   btnNode.classList.remove("display");
 }
 function btnHandler() {
+  averageSum = [];
   textNode.innerHTML = "";
   btnNode.classList.add("display");
 }
