@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+}
+.left {
+  position: relative;
+  width: 1500px;
+  height: 800px;
+}
+.text {
+  width: 200px;
+  height: 100vh;
+}
+.circle {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  background-color: aqua;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.subtitle {
+  color: green;
+}
+.btn {
+  color: white;
+  background-color: aqua;
+  width: 100px;
+  height: 25px;
+  border: none;
+  cursor: pointer;
+}
+.display {
+  display: none;
+}
